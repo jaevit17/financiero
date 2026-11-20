@@ -17,18 +17,22 @@ public class Cuenta {
 	public void setId(String id) {
 		this.id = id;
 	}
+	//----------------------------
 	public double getSaldoActual() {
 		return saldoActual;
 	}
 	public void setSaldoActual(double saldoActual) {
 		this.saldoActual = saldoActual;
 	}
+	//----------------------------
 	public String getTipo() {
 		return tipo;
 	}
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	//------------------------------
+	
 	//METODOS
 	public void imprimir() {
 		System.out.println("----CUENTA----");
@@ -36,5 +40,4 @@ public class Cuenta {
 		System.out.println("SALDO ACTUAL: "+saldoActual);
 		System.out.println("TIPO: "+tipo);
 	}
-	
 }
