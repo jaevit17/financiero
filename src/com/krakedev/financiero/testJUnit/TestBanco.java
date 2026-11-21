@@ -62,7 +62,43 @@ public class TestBanco {
     	assertFalse(respuesta4);
     	assertEquals(150, cuenta.getSaldoActual());
 
+    }
+
+    @Test
+    public void testRetirar() {
+
+    	// CASO 1: Crear un cliente, banco y cuenta
+    	Cliente cliente = new Cliente("1234567890", "Josue", "Vilcacundo");
+    	Banco banco = new Banco();
+    	Cuenta cuenta = banco.crearCuenta(cliente);
+
+    	// CASO 2: Depositar dinero para realizar los retiros
+    	banco.depositar(100, cuenta);
+
+    	// CASO 3: Realizar un retiro válido
+    	boolean respuesta1 = banco.retirar(30, cuenta);
+    	assertTrue(respuesta1);
+    	assertEquals(70, cuenta.getSaldoActual());
+
+    	// CASO 4: Intentar retirar un monto de cero
+    	boolean respuesta2 = banco.retirar(0, cuenta);
+    	assertFalse(respuesta2);
+    	assertEquals(70, cuenta.getSaldoActual());
+
+    	// CASO 5: Intentar retirar un monto negativo
+    	boolean respuesta3 = banco.retirar(-20, cuenta);
+
+    	assertFalse(respuesta3);
+    	assertEquals(70, cuenta.getSaldoActual());
+
+    	// CASO 6: Intentar retirar más dinero del disponible
+    	boolean respuesta4 = banco.retirar(100, cuenta);
+
+    	assertFalse(respuesta4);
+    	assertEquals(70, cuenta.getSaldoActual());
+
 }
+
 
 
 }
