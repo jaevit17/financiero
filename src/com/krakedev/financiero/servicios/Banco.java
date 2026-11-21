@@ -42,6 +42,17 @@ public class Banco {
 			return false;
 		}
 	}
-	
-	
+	public boolean transferir(double monto,Cuenta origen,Cuenta destino) {
+		boolean retiro=retirar(monto,origen);
+		if(retiro==true) {
+			boolean deposito=depositar(monto,destino);	
+			if(deposito==true) {
+				return true;
+			}else {
+				return false;
+			}
+		}else {
+			return false;
+		}
+	}
 }

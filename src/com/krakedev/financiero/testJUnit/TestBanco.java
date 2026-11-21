@@ -87,17 +87,54 @@ public class TestBanco {
 
     	// CASO 5: Intentar retirar un monto negativo
     	boolean respuesta3 = banco.retirar(-20, cuenta);
-
     	assertFalse(respuesta3);
     	assertEquals(70, cuenta.getSaldoActual());
 
     	// CASO 6: Intentar retirar más dinero del disponible
     	boolean respuesta4 = banco.retirar(100, cuenta);
-
     	assertFalse(respuesta4);
     	assertEquals(70, cuenta.getSaldoActual());
 
-}
+    }
+
+    @Test
+    public void testTransferir() {
+
+    	// CASO 1: Crear un cliente, banco y dos cuentas
+    	Cliente cliente = new Cliente("1234567890", "Josue", "Vilcacundo");
+    	Banco banco = new Banco();
+    	Cuenta origen = banco.crearCuenta(cliente);
+    	Cuenta destino = banco.crearCuenta(cliente);
+
+    	// CASO 2: Depositar dinero en la cuenta origen
+    	banco.depositar(200, origen);
+
+    	// CASO 3: Realizar una transferencia válida
+    	boolean respuesta1 = banco.transferir(100, origen, destino);
+    	assertTrue(respuesta1);
+    	assertEquals(100, origen.getSaldoActual());
+    	assertEquals(100, destino.getSaldoActual());
+
+    	// CASO 4: Intentar transferir más dinero del disponible
+    	boolean respuesta2 = banco.transferir(150, origen, destino);
+    	assertFalse(respuesta2);
+    	assertEquals(100, origen.getSaldoActual());
+    	assertEquals(100, destino.getSaldoActual());
+
+    	// CASO 5: Intentar transferir un monto de cero
+    	boolean respuesta3 = banco.transferir(0, origen, destino);
+    	assertFalse(respuesta3);
+    	assertEquals(100, origen.getSaldoActual());
+    	assertEquals(100, destino.getSaldoActual());
+
+    	// CASO 6: Intentar transferir un monto negativo
+    	boolean respuesta4 = banco.transferir(-20, origen, destino);
+    	assertFalse(respuesta4);
+    	assertEquals(100, origen.getSaldoActual());
+    	assertEquals(100, destino.getSaldoActual());
+
+    }
+
 
 
 
