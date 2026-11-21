@@ -1,0 +1,8 @@
+Toma el rol de un Full Stack Java y experto en JUnit 5
+Objetivo: Realizar pruebas unitarias del método 
+retirar() de la clase Banco.
+Acciones:
+- Comprobar retiros válidos.
+- Validar que el saldo disminuya correctamente.
+- Probar montos negativos, cero y superiores al saldo disponible.
+- Verificar que los retiros inválidos no modifiquen el saldo.

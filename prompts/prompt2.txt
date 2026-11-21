@@ -1,0 +1,8 @@
+Toma el rol de un Full Stack Java y experto en JUnit 5
+Objetivo: Realizar pruebas unitarias del método depositar()
+de la clase Banco.
+Acciones:
+- Comprobar depósitos con montos positivos.
+- Validar que el saldo se acumule correctamente.
+- Probar montos iguales a cero y negativos.
+- Verificar que los depósitos inválidos no modifiquen el saldo.

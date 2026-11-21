@@ -1,0 +1,8 @@
+Toma el rol de un Full Stack Java y experto en JUnit 5
+Objetivo: Realizar pruebas unitarias del método 
+transferir() de la clase Banco.
+Acciones:
+- Comprobar transferencias exitosas entre dos cuentas.
+- Validar que se descuente el dinero de la cuenta origen.
+- Verificar que se deposite correctamente en la cuenta destino.
+- Probar transferencias inválidas y comprobar que los saldos no se alteren cuando la operación falla.

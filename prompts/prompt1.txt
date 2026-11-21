@@ -1,0 +1,8 @@
+Toma el rol de un Full Stack Java y experto en JUnit 5
+Objetivo: Realizar pruebas unitarias del método crearCuenta()
+de la clase Banco.
+Acciones:
+- Verificar que se creen correctamente las cuentas.
+- Comprobar que los códigos sean únicos y consecutivos.
+- Validar que cada cuenta tenga el cliente correspondiente.
+- Utilizar comentarios claros por cada caso de prueba.
