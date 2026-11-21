@@ -7,8 +7,9 @@ public class Cuenta {
 	private Cliente propietario;
 	
 	//CONSTRUCTOR
-	public Cuenta(String id) {
+	public Cuenta(String id,Cliente propietario) {
 		this.id=id;
+		this.propietario=propietario;
 		this.saldoActual=0;
 		this.tipo="A";
 	}
